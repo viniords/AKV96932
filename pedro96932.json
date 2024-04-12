@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "_generator": {
+            "name": "bicep",
+            "version": "0.26.54.24096",
+            "templateHash": "8629186205194254058"
+        }
+    },
+    "parameters": {
+        "keyVaultName": {
+            "type": "string",
+            "metadata": {
+                "description": "Especifica o nome do Azure Key Vault."
+            },
+            "defaultValue": "Pedro96932"
+        },
+        "location": {
+            "type": "string",
+            "defaultValuae": "[resourceGroup().location]",
+            "metadata": {
+                "description": "Especifica a localização do Azure onde o Key Vault deve ser criado."
+            }
+        },
+        "enabledForDeployment": {
+            "type": "bool",
+            "defaultValue": false,
+            "metadata": {
+                "description": "Especifica se as Máquinas Virtuais do Azure podem recuperar certificados armazenados como segredos no Key Vault."
+            }
+        },
+        "enabledForDiskEncryption": {
+            "type": "bool",
+            "defaultValue": false,
+            "metadata": {
+                "description": "Especifica se a Criptografia de Disco do Azure pode recuperar segredos do vault e desembrulhar chaves."
+            }
+        },
+        "retentionInDays": {
+            "type": "int",
+            "defaultValue": 90,
+            "metadata": {
+                "description": "Especifica o período de retenção das chaves em dias (por exemplo, 90 dias)."
+            }
+        }
+    }
+}
+ 
